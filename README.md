@@ -3,6 +3,8 @@ mC4のデータ加工を検討するためのレポジトリ
 
 ## hatakeyama dev for pretraining
 - cleanしすぎないようにしてみる
+    - hojicharのNGフィルタを外す
+    - それでもfilterしすぎてるかも｡
 
 # setup
 ~~~

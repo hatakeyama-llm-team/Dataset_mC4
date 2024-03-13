@@ -7,8 +7,8 @@ base_path = "src/cleaner/hoji_dict/"
 cleaner = Compose([
     document_filters.JSONLoader(key="text"),
     document_filters.AcceptJapanese(),
-    document_filters.DiscardRareKuten(),
-    document_filters.DocumentLengthFilter(min_doc_len=100, max_doc_len=50000),
+    # document_filters.DiscardRareKuten(),  # 日本語以外を消す
+    document_filters.DocumentLengthFilter(min_doc_len=10, max_doc_len=50000),
     # document_filters.DiscardAdultContentJa(
     #    base_path + "adult_keywords_ja.txt"),
     # document_filters.DiscardAdultContentEn(
@@ -20,10 +20,10 @@ cleaner = Compose([
     # document_filters.DiscardViolenceContentJa(
     #    base_path + "violence_keywords_ja.txt"
     # ),
-    document_filters.DiscardBBSComments(),
-    document_filters.DiscardAds(
-        base_path + "advertisement_keywords_ja.txt"
-    ),
+    # document_filters.DiscardBBSComments(),
+    # document_filters.DiscardAds(
+    #    base_path + "advertisement_keywords_ja.txt"
+    # ),
     document_filters.MaskPersonalInformation(),
     # document_filters.ExampleHojiChar(),
     document_filters.JSONDumper(),

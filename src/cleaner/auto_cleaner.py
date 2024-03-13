@@ -10,7 +10,7 @@ from .hojichar_filter import hoji_filter
 
 def text_to_cleaned_paragraphs(text):
     text = normalize(text)  # 正規化
-    text = text_checker.check(text)  # ひらがなを含まないテキストは除外
+    # text = text_checker.check(text)  # ひらがなを含まないテキストは除外
 
     # パラグラフと文章に分割
     paragraphs = text_to_paragraph_sentences(text)
@@ -37,7 +37,7 @@ def text_to_cleaned_paragraphs(text):
             new_paragraphs.append(new_lines)
 
     # 文末が｡などでおわらないパラグラフ中の文章を削除
-    clean_line_endings(new_paragraphs)
+    # clean_line_endings(new_paragraphs)
 
     # パラグラフにまとめる
     cleaned_paragraphs = []
